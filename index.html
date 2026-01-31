@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rollin Hu &mdash; Journalist</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --border: #e0e0e0;
+      --bg: #fdfdfd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Two-column grid */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      min-height: 100vh;
+    }
+
+    /* Left column */
+    .left {
+      padding: 72px 48px 72px 64px;
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .headshot {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 32px;
+      filter: grayscale(15%);
+    }
+
+    .left h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .left .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .bio p {
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-links {
+      margin-top: 36px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      font-size: 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .contact-links a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    /* Right column */
+    .right {
+      padding: 72px 64px 72px 48px;
+    }
+
+    .right .section-label {
+      margin-bottom: 32px;
+    }
+
+    .clip {
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .clip:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .clip a {
+      font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.35;
+      display: inline;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .clip a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    .clip .meta {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+    }
+
+    .clip .description {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      line-height: 1.55;
+    }
+
+    /* Responsive: stack on narrow screens */
+    @media (max-width: 768px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 48px 24px;
+        text-align: center;
+      }
+
+      .headshot {
+        width: 120px;
+        height: 120px;
+      }
+
+      .contact-links {
+        justify-content: center;
+      }
+
+      .bio p {
+        text-align: left;
+      }
+
+      .right {
+        padding: 48px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Left column: headshot + bio -->
+    <div class="left">
+      <img src="headshot.jpg" alt="Rollin Hu" class="headshot">
+      <h1>Rollin Hu</h1>
+      <p class="subtitle">Producer, The Ezra Klein Show<br>The New York Times</p>
+
+      <div class="bio">
+        <p class="section-label">About</p>
+        <p>
+          Rollin Hu is a producer for <em>The Ezra Klein Show</em> at
+          The New York Times, where he researches, reports, and produces
+          episodes on politics, policy, technology, and culture.
+        </p>
+        <p>
+          Before joining the Times, he worked at The Atlantic, The New Republic,
+          and WYPR, Baltimore's NPR station. His writing has appeared in
+          The Nation, Baltimore Beat, and The Johns Hopkins News-Letter, where
+          he served as Editor-in-Chief.
+        </p>
+        <p>
+          He studied history and economics at Johns Hopkins University, with a
+          focus on 20th-century China.
+        </p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://x.com/rollrhu" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://muckrack.com/rollin-hu" target="_blank" rel="noopener">Muck Rack</a>
+      </div>
+    </div>
+
+    <!-- Right column: recent work -->
+    <div class="right">
+      <p class="section-label">Recent Work</p>
+
+      <div class="clip">
+        <a href="https://www.nytimes.com/2026/01/16/opinion/ezra-klein-podcast-yuval-levin.html" target="_blank" rel="noopener">
+          Has Trump Achieved a Lot Less Than It Seems?
+        </a>
+        <span class="meta">The New York Times &middot; January 2026</span>
+        <p class="description">A conversation with Yuval Levin on the gap between the spectacle and substance of Trump's second term.</p>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.nytimes.com/2025/12/23/opinion/ezra-klein-podcast-trade-economics.html" target="_blank" rel="noopener">
+          This Is Something That Traditional Economics Isn't Prepared For
+        </a>
+        <span class="meta">The New York Times &middot; December 2025</span>
+        <p class="description">Tracy Alloway and Joe Weisenthal on how the global trade upheaval and A.I. spending boom are defying economic orthodoxy.</p>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.nytimes.com/2025/12/10/opinion/ezra-klein-podcast-gavin-newsom.html" target="_blank" rel="noopener">
+          The Contradictions of Gavin Newsom
+        </a>
+        <span class="meta">The New York Times &middot; December 2025</span>
+        <p class="description">How the California governor became the 2028 Democratic front-runner.</p>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.nytimes.com/2025/10/08/opinion/ezra-klein-podcast-neera-tanden.html" target="_blank" rel="noopener">
+          What the Shutdown Is Really About
+        </a>
+        <span class="meta">The New York Times &middot; October 2025</span>
+        <p class="description">Neera Tanden on expiring health insurance subsidies and the fight over the future of the Affordable Care Act.</p>
+      </div>
+
+      <div class="clip">
+        <a href="https://www.thenation.com/article/culture/dan-wang-breakneck-china/" target="_blank" rel="noopener">
+          How China Engineered the Next Century
+        </a>
+        <span class="meta">The Nation &middot; August 2025</span>
+        <p class="description">A review of Dan Wang's <em>Breakneck</em> and the contest between engineers and lawyers shaping two superpowers.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
