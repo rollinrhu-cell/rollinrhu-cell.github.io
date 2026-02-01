@@ -26,7 +26,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Two-column grid */
     .page {
       display: grid;
       grid-template-columns: 1fr 1.4fr;
@@ -84,14 +83,14 @@
       margin-bottom: 0;
     }
 
-    .contact-links {
+    .left-links {
       margin-top: 36px;
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    .contact-links a {
+    .left-links a {
       font-size: 0.9rem;
       color: var(--text);
       text-decoration: none;
@@ -100,22 +99,23 @@
       transition: border-color 0.2s;
     }
 
-    .contact-links a:hover {
+    .left-links a:hover {
       border-bottom-color: var(--text);
     }
 
     /* Right column */
     .right {
       padding: 72px 64px 72px 48px;
+      overflow-y: auto;
     }
 
     .right .section-label {
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .clip {
-      padding-bottom: 28px;
-      margin-bottom: 28px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
       border-bottom: 1px solid var(--border);
     }
 
@@ -126,7 +126,7 @@
     }
 
     .clip a {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       color: var(--text);
       text-decoration: none;
       font-weight: 600;
@@ -142,19 +142,33 @@
 
     .clip .meta {
       display: block;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .clips-loading {
       font-size: 0.85rem;
       color: var(--text-secondary);
-      margin-top: 6px;
     }
 
-    .clip .description {
-      font-size: 0.9rem;
+    .more-link {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 0.85rem;
       color: var(--text-secondary);
-      margin-top: 6px;
-      line-height: 1.55;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
     }
 
-    /* Responsive: stack on narrow screens */
+    .more-link:hover {
+      color: var(--text);
+      border-bottom-color: var(--text);
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .page {
         grid-template-columns: 1fr;
@@ -174,7 +188,7 @@
         height: 120px;
       }
 
-      .contact-links {
+      .left-links {
         justify-content: center;
       }
 
@@ -200,71 +214,151 @@
         <p class="section-label">About</p>
         <p>
           Rollin Hu is a producer for <em>The Ezra Klein Show</em> at
-          The New York Times, where he researches, reports, and produces
-          episodes on politics, policy, technology, and culture.
+          The New York Times, where he reports on economics, politics,
+          and technology.
         </p>
         <p>
           Before joining the Times, he worked at The Atlantic, The New Republic,
-          and WYPR, Baltimore's NPR station. His writing has appeared in
-          The Nation, Baltimore Beat, and The Johns Hopkins News-Letter, where
-          he served as Editor-in-Chief.
-        </p>
-        <p>
-          He studied history and economics at Johns Hopkins University, with a
-          focus on 20th-century China.
+          and WYPR, Baltimore's NPR station. His writing has also appeared in
+          The Nation.
         </p>
       </div>
 
-      <div class="contact-links">
+      <div class="left-links">
         <a href="https://x.com/rollrhu" target="_blank" rel="noopener">X / Twitter</a>
         <a href="https://muckrack.com/rollin-hu" target="_blank" rel="noopener">Muck Rack</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
 
     <!-- Right column: recent work -->
     <div class="right">
       <p class="section-label">Recent Work</p>
-
-      <div class="clip">
-        <a href="https://www.nytimes.com/2026/01/16/opinion/ezra-klein-podcast-yuval-levin.html" target="_blank" rel="noopener">
-          Has Trump Achieved a Lot Less Than It Seems?
-        </a>
-        <span class="meta">The New York Times &middot; January 2026</span>
-        <p class="description">A conversation with Yuval Levin on the gap between the spectacle and substance of Trump's second term.</p>
+      <div id="clips">
+        <p class="clips-loading">Loading recent clips&hellip;</p>
       </div>
-
-      <div class="clip">
-        <a href="https://www.nytimes.com/2025/12/23/opinion/ezra-klein-podcast-trade-economics.html" target="_blank" rel="noopener">
-          This Is Something That Traditional Economics Isn't Prepared For
-        </a>
-        <span class="meta">The New York Times &middot; December 2025</span>
-        <p class="description">Tracy Alloway and Joe Weisenthal on how the global trade upheaval and A.I. spending boom are defying economic orthodoxy.</p>
-      </div>
-
-      <div class="clip">
-        <a href="https://www.nytimes.com/2025/12/10/opinion/ezra-klein-podcast-gavin-newsom.html" target="_blank" rel="noopener">
-          The Contradictions of Gavin Newsom
-        </a>
-        <span class="meta">The New York Times &middot; December 2025</span>
-        <p class="description">How the California governor became the 2028 Democratic front-runner.</p>
-      </div>
-
-      <div class="clip">
-        <a href="https://www.nytimes.com/2025/10/08/opinion/ezra-klein-podcast-neera-tanden.html" target="_blank" rel="noopener">
-          What the Shutdown Is Really About
-        </a>
-        <span class="meta">The New York Times &middot; October 2025</span>
-        <p class="description">Neera Tanden on expiring health insurance subsidies and the fight over the future of the Affordable Care Act.</p>
-      </div>
-
-      <div class="clip">
-        <a href="https://www.thenation.com/article/culture/dan-wang-breakneck-china/" target="_blank" rel="noopener">
-          How China Engineered the Next Century
-        </a>
-        <span class="meta">The Nation &middot; August 2025</span>
-        <p class="description">A review of Dan Wang's <em>Breakneck</em> and the contest between engineers and lawyers shaping two superpowers.</p>
-      </div>
+      <a class="more-link" href="https://www.nytimes.com/by/rollin-hu" target="_blank" rel="noopener">
+        More at nytimes.com &rarr;
+      </a>
     </div>
   </div>
+
+  <script>
+    // --- Auto-updating clips from Ezra Klein Show podcast RSS ---
+    // The curated list below is the base. The auto-fetch checks for newer
+    // episodes produced by Rollin Hu and prepends any it finds.
+    var PODCAST_RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=' +
+      encodeURIComponent('https://feeds.simplecast.com/kEKXbjuJ');
+
+    // Curated list of verified byline work (newest first)
+    var curatedClips = [
+      {
+        title: 'How the World Sees America, With Adam Tooze',
+        link: 'https://www.nytimes.com/2026/01/30/opinion/ezra-klein-podcast-adam-tooze.html',
+        pubDate: '30 January 2026',
+        source: 'The New York Times'
+      },
+      {
+        title: 'Has Trump Achieved a Lot Less Than It Seems?',
+        link: 'https://www.nytimes.com/2026/01/16/opinion/ezra-klein-podcast-yuval-levin.html',
+        pubDate: '16 January 2026',
+        source: 'The New York Times'
+      },
+      {
+        title: 'This Is Something That Traditional Economics Isn\u2019t Prepared For',
+        link: 'https://www.nytimes.com/2025/12/23/opinion/ezra-klein-podcast-alloway-weisenthal.html',
+        pubDate: '23 December 2025',
+        source: 'The New York Times'
+      },
+      {
+        title: 'The Contradictions of Gavin Newsom',
+        link: 'https://www.nytimes.com/2025/12/10/opinion/ezra-klein-podcast-gavin-newsom.html',
+        pubDate: '10 December 2025',
+        source: 'The New York Times'
+      },
+      {
+        title: 'Can Economic Populism Save the Democratic Party?',
+        link: 'https://www.nytimes.com/2025/10/24/opinion/ezra-klein-podcast-jared-abbott.html',
+        pubDate: '24 October 2025',
+        source: 'The New York Times'
+      },
+      {
+        title: 'What the Shutdown Is Really About',
+        link: 'https://www.nytimes.com/2025/10/08/opinion/ezra-klein-podcast-neera-tanden.html',
+        pubDate: '8 October 2025',
+        source: 'The New York Times'
+      },
+      {
+        title: 'Ta-Nehisi Coates on Bridging Gaps vs. Drawing Lines',
+        link: 'https://www.nytimes.com/2025/09/28/opinion/ezra-klein-podcast-ta-nehisi-coates.html',
+        pubDate: '28 September 2025',
+        source: 'The New York Times'
+      },
+      {
+        title: 'Spencer Cox Wants to Pull Our Politics Back from the Brink',
+        link: 'https://www.nytimes.com/2025/09/19/opinion/ezra-klein-podcast-spencer-cox.html',
+        pubDate: '19 September 2025',
+        source: 'The New York Times'
+      },
+      {
+        title: 'How China Engineered the Next Century',
+        link: 'https://www.thenation.com/article/culture/dan-wang-breakneck-china/',
+        pubDate: '26 August 2025',
+        source: 'The Nation'
+      }
+    ];
+
+    function formatDate(dateStr) {
+      var d = new Date(dateStr);
+      var day = d.getDate();
+      var month = d.toLocaleDateString('en-GB', { month: 'long' });
+      var year = d.getFullYear();
+      return day + ' ' + month + ' ' + year;
+    }
+
+    function renderClips(clips) {
+      var container = document.getElementById('clips');
+      container.innerHTML = clips.map(function(clip) {
+        return '<div class="clip">' +
+          '<a href="' + clip.link + '" target="_blank" rel="noopener">' +
+            clip.title +
+          '</a>' +
+          '<span class="meta">' + clip.source + ' &middot; ' + clip.pubDate + '</span>' +
+        '</div>';
+      }).join('');
+    }
+
+    // Newest curated date — auto-fetch will only prepend episodes newer than this
+    var newestCurated = new Date('2026-01-30');
+
+    fetch(PODCAST_RSS_URL)
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+          throw new Error('Feed unavailable');
+        }
+        // Find episodes produced by Rollin Hu that are newer than the curated list
+        var newClips = data.items
+          .filter(function(item) {
+            var desc = (item.description || '') + (item.content || '');
+            return desc.toLowerCase().includes('produced by rollin hu') &&
+                   new Date(item.pubDate) > newestCurated;
+          })
+          .map(function(item) {
+            return {
+              title: item.title,
+              link: item.link,
+              pubDate: formatDate(item.pubDate),
+              source: 'The New York Times'
+            };
+          });
+
+        // Prepend any new clips to the curated list
+        renderClips(newClips.concat(curatedClips));
+      })
+      .catch(function() {
+        renderClips(curatedClips);
+      });
+  </script>
 </body>
 </html>
