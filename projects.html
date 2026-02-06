@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &mdash; Rollin Hu</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --border: #e0e0e0;
+      --bg: #fdfdfd;
+      --accent: #0066cc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      min-height: 100vh;
+    }
+
+    /* Left column */
+    .left {
+      padding: 72px 48px 72px 64px;
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .headshot {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 32px;
+      filter: grayscale(15%);
+    }
+
+    .left h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .left .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .bio p {
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .left-links {
+      margin-top: 36px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .left-links a {
+      font-size: 0.9rem;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .left-links a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    .left-links a.active {
+      border-bottom-color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Right column */
+    .right {
+      padding: 72px 64px 72px 48px;
+      overflow-y: auto;
+    }
+
+    .right .section-label {
+      margin-bottom: 28px;
+    }
+
+    .intro {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+
+    .project {
+      padding: 24px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s;
+    }
+
+    .project:hover {
+      border-color: #ccc;
+    }
+
+    .project h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .project h2 a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .project h2 a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    .project .description {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+
+    .project .tech {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project .tech span {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: #f0f0f0;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .project .links {
+      margin-top: 14px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .project .links a {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project .links a:hover {
+      text-decoration: underline;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #666;
+      background: #f5f5f5;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 48px 24px;
+        text-align: center;
+      }
+
+      .headshot {
+        width: 120px;
+        height: 120px;
+      }
+
+      .left-links {
+        justify-content: center;
+      }
+
+      .bio p {
+        text-align: left;
+      }
+
+      .right {
+        padding: 48px 24px;
+      }
+
+      .project {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Left column: headshot + bio -->
+    <div class="left">
+      <img src="headshot.jpg" alt="Rollin Hu" class="headshot">
+      <h1>Rollin Hu</h1>
+      <p class="subtitle">Producer, The Ezra Klein Show<br>The New York Times</p>
+
+      <div class="bio">
+        <p class="section-label">About</p>
+        <p>
+          Rollin Hu is a producer for <em>The Ezra Klein Show</em> at
+          The New York Times, where he reports on economics, politics,
+          and technology.
+        </p>
+        <p>
+          Before joining the Times, he worked at The Atlantic, The New Republic,
+          and WYPR, Baltimore's NPR station. His writing has also appeared in
+          The Nation.
+        </p>
+      </div>
+
+      <div class="left-links">
+        <a href="index.html">Work</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <!-- Right column: projects -->
+    <div class="right">
+      <p class="section-label">Code Projects</p>
+      <p class="intro">
+        Tools I've built with Claude Code to automate journalism workflows and explore AI-assisted development.
+      </p>
+
+      <div class="project">
+        <h2>
+          <a href="https://github.com/rollinrhu-cell/youtube-transcriber" target="_blank" rel="noopener">
+            YouTube Transcriber
+          </a>
+          <span class="badge">CLI</span>
+        </h2>
+        <p class="description">
+          Downloads audio from YouTube podcasts and transcribes them with speaker diarization using Google Gemini.
+          Outputs both raw and cleaned transcripts with speaker labels. Handles long podcasts by automatically
+          chunking audio into segments.
+        </p>
+        <div class="tech">
+          <span>Python</span>
+          <span>Gemini API</span>
+          <span>yt-dlp</span>
+          <span>ffmpeg</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/rollinrhu-cell/youtube-transcriber" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h2>
+          <a href="https://github.com/rollinrhu-cell/youtube-channel-digest" target="_blank" rel="noopener">
+            YouTube Channel Email Digest
+          </a>
+          <span class="badge">Automation</span>
+        </h2>
+        <p class="description">
+          Monitors YouTube channels and sends email digests of new uploads. Useful for tracking podcast releases,
+          news channels, or any creator without relying on YouTube's notification system.
+        </p>
+        <div class="tech">
+          <span>Python</span>
+          <span>YouTube API</span>
+          <span>Email</span>
+        </div>
+        <div class="links">
+          <a href="https://github.com/rollinrhu-cell/youtube-channel-digest" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
